@@ -22,3 +22,7 @@ a {
   border: none;
   border-radius: 0px
 }
+
+.img {
+  object-fit: contain;
+}
