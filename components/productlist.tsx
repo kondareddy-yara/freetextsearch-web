@@ -21,6 +21,8 @@ const ProductList: React.FC<Props> = ({ products }) => {
                   fertiliser_group_name={product.fertiliser_group_name}
                   Manufacturer_name={product.Manufacturer_name as string}
                   categoryName={product.categoryName as string}
+                  Country= {product.Country_of_origin as string}
+                  img={product.ProductVariants[0].photo}
                 />
               </Card>
             </div>

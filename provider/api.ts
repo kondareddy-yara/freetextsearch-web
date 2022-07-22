@@ -34,7 +34,7 @@ const fetchProducts = async (
   search: string
 ): Promise<ProductType[] | undefined> => {
   const res = await axios.get(
-    `http://localhost:8000/api/v1/products?search=${search}`
+    `http://localhost:4000/api/v1/products?search=${search}`
   );
 
   return res.data.data.products;
