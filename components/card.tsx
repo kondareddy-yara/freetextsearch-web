@@ -1,22 +1,23 @@
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
 
 const card = (
-    <Box  alignItems="center"
+  <Box
+    alignItems="center"
     justifyContent="center"
-    style={{width:'760px', margin: '0 auto', border: '1px solid lightgray'}}
+    style={{ border: "1px solid lightgray" }}
   >
-      <Card sx={{ display: 'flex' }} >
-        <CardMedia
-          component="img"
-          sx={{ width: 200 }}
-          image="https://picsum.photos/400/300"
-          alt="Live from space album cover"
-        />
-      <CardContent sx={{ flex: '1' }}>
+    <Card sx={{ display: "flex" }}>
+      <CardMedia
+        component="img"
+        sx={{ width: 200 }}
+        image="https://picsum.photos/400/300"
+        alt="Live from space album cover"
+      />
+      <CardContent sx={{ flex: "1" }}>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
         </Typography>
@@ -29,9 +30,8 @@ const card = (
           {'"a benevolent smile"'} */}
         </Typography>
       </CardContent>
-      </Card>
-      </Box>
-  );
+    </Card>
+  </Box>
+);
 
-  export default card;
-
+export default card;
