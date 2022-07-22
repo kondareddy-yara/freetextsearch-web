@@ -13,7 +13,7 @@ export interface ProductType {
   categoryName?: string;
   Crops: Crop[];
 }
-interface Crop {
+export interface Crop {
   cropName: string;
 }
 interface ProductVariant {
