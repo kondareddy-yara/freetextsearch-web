@@ -1,7 +1,7 @@
 import { Card } from "@mui/material";
 import React from "react";
 import { ProductType } from "../provider/api";
-import card from "./card";
+import CardComponent from "./card";
 
 type Props = {
   products: ProductType[];
@@ -15,7 +15,14 @@ const ProductList: React.FC<Props> = ({ products }) => {
         products?.map((product) => {
           return (
             <div key={product.name} style={{ marginBottom: "1rem" }}>
-              <Card variant="outlined">{card}</Card>
+              <Card variant="outlined">
+                <CardComponent
+                  name={product.name}
+                  fertiliser_group_name={product.fertiliser_group_name}
+                  Manufacturer_name={product.Manufacturer_name as string}
+                  categoryName={product.categoryName as string}
+                />
+              </Card>
             </div>
           );
         })}
