@@ -1,6 +1,7 @@
+import { debounce } from "@material-ui/core";
 import { Search } from "@mui/icons-material";
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import fetchProducts, { ProductType } from "../provider/api";
 
 type Props = {
@@ -8,7 +9,22 @@ type Props = {
 };
 
 const SearchBar: React.FC<Props> = ({ setProudcts }) => {
-  const [searchText, setSearchText] = useState("yara");
+  const [searchText, setSearchText] = useState("");
+
+  const debounceSearch = useCallback(
+    debounce((query: string, cb: (query: string) => Promise<void>) => {
+      cb(query);
+    }, 500),
+    []
+  );
+
+  useEffect(() => {
+    const fetchProductsData = async (searchText: string) => {
+      setProudcts((await fetchProducts(searchText)) as ProductType[]);
+    };
+    searchText && debounceSearch(searchText, fetchProductsData);
+  }, [searchText, debounceSearch, setProudcts]);
+
   const searchProducts = async () => {
     const products = await fetchProducts(searchText);
     setProudcts(products as ProductType[]);
