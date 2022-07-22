@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+
+.css-1v5z4dq-MuiPaper-root-MuiCard-root
+{
+  border: none;
+  border-radius: 0px
+}
